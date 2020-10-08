@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    h1, h3, p{
+        font-family: sans-serif;
+        color: white;
+        font-weight: bold;
+    }
+
+    .jtron{
+      display: none;
+    }
+
+    .bg-green{
+      background-color: green;
+    }
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav id="nav" class="navbar bg-primary navbar-dark">
+        <a class="navbar-brand" href="#" onclick="goHome()">DG</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="content">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="goHome()">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" onclick="otherFeatures()">Other Features</a>
+              </li>   
+            </ul>
+        </div>
+    </nav>
+
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="rounded mx-auto d-block img-fluid" src="zion_np.jpg" alt="Zion Nat. Park">
+              <div class="carousel-caption">
+                <h3>Zion National Park</h3>
+                <p>I hope to go here over the winter break!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="rounded mx-auto d-block img-fluid" src="greatsanddunes_np.jpg" alt="Great Sand Dunes Nat. Park">
+              <div class="carousel-caption">
+                <h3>Great Sand Dunes National Park</h3>
+                <p>Who knew there was this much sand in Colorado?</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="rounded mx-auto d-block img-fluid" src="glacier_np.jpg" alt="Glacier Nat. Park">
+              <div class="carousel-caption">
+                <h3>Glacier National Park</h3>
+                <p>The "coolest" place in Montana!</p>
+              </div>
+            </div>
+          </div>
+        
+        <a class="carousel-control-prev bg-dark" href="#slides" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next bg-dark" href="#slides" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <div class="container">
+      <div id="jtron" class="jumbotron jumbotron-fluid bg-dark d-none">
+        <div class="container" style.display="none">
+          <h1 style="text-align: center;">Below are some buttons</h1>
+          <p style="text-align: center;">They alter the color of the navbar!</p>
+        </div>
+      </div>
+
+      <button id="gBtn" type="button" class="btn btn-success d-none" onclick="goGreen()">Green Mode</button>
+      <button id="bBtn" type="button" class="btn btn-primary d-none" onclick="resetColor()">Reset Color</button>
+      
+    </div>
+
+    <script>
+      
+      function otherFeatures(){
+        document.getElementById("slides").style.display = "none";
+        document.getElementById("jtron").className = "jumbotron jumbotron-fluid bg-dark d-block";
+        document.getElementById("gBtn").className = "btn btn-success d-block";
+        document.getElementById("bBtn").className = "btn btn-primary d-block";
+      }
+
+      function goHome(){
+        document.getElementById("slides").style.display = "block";
+        document.getElementById("jtron").className = "jumbotron jumbotron-fluid bg-dark d-none";
+        document.getElementById("gBtn").className = "btn btn-success d-none";
+        document.getElementById("bBtn").className = "btn btn-primary d-none";
+      }
+
+      function goGreen(){
+        document.getElementById("nav").className = "navbar bg-green navbar-dark";
+      }
+
+      function resetColor(){
+        document.getElementById("nav").className = "navbar bg-primary navbar-dark";
+      }
+
+    </script>
+</body>
+
+</html>    
